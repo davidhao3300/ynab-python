@@ -17,23 +17,26 @@ Single payee location
 Returns a single payee location
 
 ### Example
+
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import ynab
 from ynab.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: bearer
 configuration = ynab.Configuration()
+# Configure API key authorization: bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://api.youneedabudget.com/v1
+configuration.host = "https://api.youneedabudget.com/v1"
+# Create an instance of the API class
 api_instance = ynab.PayeeLocationsApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
-payee_location_id = 'payee_location_id_example' # str | ID of payee location
+budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+payee_location_id = 'payee_location_id_example' # str | id of payee location
 
 try:
     # Single payee location
@@ -47,8 +50,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
- **payee_location_id** | [**str**](.md)| ID of payee location | 
+ **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
+ **payee_location_id** | **str**| id of payee location | 
 
 ### Return type
 
@@ -63,6 +66,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The payee location |  -  |
+**404** | The payee location was not found |  -  |
+**0** | An error occurred |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payee_locations**
@@ -73,22 +83,25 @@ List payee locations
 Returns all payee locations
 
 ### Example
+
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import ynab
 from ynab.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: bearer
 configuration = ynab.Configuration()
+# Configure API key authorization: bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://api.youneedabudget.com/v1
+configuration.host = "https://api.youneedabudget.com/v1"
+# Create an instance of the API class
 api_instance = ynab.PayeeLocationsApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 
 try:
     # List payee locations
@@ -102,7 +115,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
 
 ### Return type
 
@@ -117,6 +130,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The list of payee locations |  -  |
+**404** | No payees locations were found |  -  |
+**0** | An error occurred |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payee_locations_by_payee**
@@ -127,23 +147,26 @@ List locations for a payee
 Returns all payee locations for the specified payee
 
 ### Example
+
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import ynab
 from ynab.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: bearer
 configuration = ynab.Configuration()
+# Configure API key authorization: bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://api.youneedabudget.com/v1
+configuration.host = "https://api.youneedabudget.com/v1"
+# Create an instance of the API class
 api_instance = ynab.PayeeLocationsApi(ynab.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
-payee_id = 'payee_id_example' # str | ID of payee
+budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+payee_id = 'payee_id_example' # str | id of payee
 
 try:
     # List locations for a payee
@@ -157,8 +180,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
- **payee_id** | [**str**](.md)| ID of payee | 
+ **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
+ **payee_id** | **str**| id of payee | 
 
 ### Return type
 
@@ -172,6 +195,13 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The list of requested payee locations |  -  |
+**404** | No payees locations were found |  -  |
+**0** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

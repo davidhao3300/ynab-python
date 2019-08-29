@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iso_code** | **str** |  | 
 **example_format** | **str** |  | 
-**decimal_digits** | **float** |  | 
+**decimal_digits** | **int** |  | 
 **decimal_separator** | **str** |  | 
 **symbol_first** | **bool** |  | 
 **group_separator** | **str** |  | 
