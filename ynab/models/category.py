@@ -92,15 +92,21 @@ class Category(object):
         self.hidden = hidden
         if original_category_group_id is not None:
             self.original_category_group_id = original_category_group_id
-        self.note = note
+        if note is not None:
+            self.note = note
         self.budgeted = budgeted
         self.activity = activity
         self.balance = balance
-        self.goal_type = goal_type
-        self.goal_creation_month = goal_creation_month
-        self.goal_target = goal_target
-        self.goal_target_month = goal_target_month
-        self.goal_percentage_complete = goal_percentage_complete
+        if goal_type is not None:
+            self.goal_type = goal_type
+        if goal_creation_month is not None:
+            self.goal_creation_month = goal_creation_month
+        if goal_target is not None:
+            self.goal_target = goal_target
+        if goal_target_month is not None:
+            self.goal_target_month = goal_target_month
+        if goal_percentage_complete is not None:
+            self.goal_percentage_complete = goal_percentage_complete
         self.deleted = deleted
 
     @property
@@ -238,8 +244,6 @@ class Category(object):
         :param note: The note of this Category.  # noqa: E501
         :type: str
         """
-        if note is None:
-            raise ValueError("Invalid value for `note`, must not be `None`")  # noqa: E501
 
         self._note = note
 
@@ -338,8 +342,6 @@ class Category(object):
         :param goal_type: The goal_type of this Category.  # noqa: E501
         :type: str
         """
-        if goal_type is None:
-            raise ValueError("Invalid value for `goal_type`, must not be `None`")  # noqa: E501
         allowed_values = ["TB", "TBD", "MF", "NEED"]  # noqa: E501
         if goal_type not in allowed_values:
             raise ValueError(
@@ -369,8 +371,6 @@ class Category(object):
         :param goal_creation_month: The goal_creation_month of this Category.  # noqa: E501
         :type: date
         """
-        if goal_creation_month is None:
-            raise ValueError("Invalid value for `goal_creation_month`, must not be `None`")  # noqa: E501
 
         self._goal_creation_month = goal_creation_month
 
@@ -394,8 +394,6 @@ class Category(object):
         :param goal_target: The goal_target of this Category.  # noqa: E501
         :type: int
         """
-        if goal_target is None:
-            raise ValueError("Invalid value for `goal_target`, must not be `None`")  # noqa: E501
 
         self._goal_target = goal_target
 
@@ -419,8 +417,6 @@ class Category(object):
         :param goal_target_month: The goal_target_month of this Category.  # noqa: E501
         :type: date
         """
-        if goal_target_month is None:
-            raise ValueError("Invalid value for `goal_target_month`, must not be `None`")  # noqa: E501
 
         self._goal_target_month = goal_target_month
 
@@ -444,8 +440,6 @@ class Category(object):
         :param goal_percentage_complete: The goal_percentage_complete of this Category.  # noqa: E501
         :type: int
         """
-        if goal_percentage_complete is None:
-            raise ValueError("Invalid value for `goal_percentage_complete`, must not be `None`")  # noqa: E501
 
         self._goal_percentage_complete = goal_percentage_complete
 

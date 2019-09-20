@@ -79,7 +79,8 @@ class Account(object):
         self.type = type
         self.on_budget = on_budget
         self.closed = closed
-        self.note = note
+        if note is not None:
+            self.note = note
         self.balance = balance
         self.cleared_balance = cleared_balance
         self.uncleared_balance = uncleared_balance
@@ -231,8 +232,6 @@ class Account(object):
         :param note: The note of this Account.  # noqa: E501
         :type: str
         """
-        if note is None:
-            raise ValueError("Invalid value for `note`, must not be `None`")  # noqa: E501
 
         self._note = note
 
