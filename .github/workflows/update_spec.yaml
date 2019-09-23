@@ -1,0 +1,42 @@
+name: Update spec JSON
+on:
+  push
+  # schedule:
+  #   - cron: '0 9 * * *' 
+jobs:
+  update_spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Update OpenAPI JSON
+        run: |
+          curl https://api.youneedabudget.com/papi/spec-v1-swagger.json > spec-v1-swagger.json
+          # Exit early if no changes.
+          # if [ -z $(git status --porcelain) ]; then
+          #   exit 78
+          # fi
+      # Not using setup-java action b/c we really don't care what java version, just that it's new
+      # If it ever turns out openapi generator isn't compatible with the newest java, we can
+      # switch to using the action.
+      - name: Install required packages
+        run: |
+          sudo -i
+          apt update
+          apt install -y default-jdk-headless wget
+      - name: Install OpenApi generator
+        run: |
+          version=$(cat .openapi-generator/VERSION)
+          wget http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/${version}/openapi-generator-cli-${version}.jar -O openapi-generator-cli.jar
+      - name: Run generator
+        run: |
+          # Get previous version from setup.py
+          cat setup.py | grep -oP  'VERSION = "\K(.+)(?=")'
+          java -jar openapi-generator-cli.jar generate -g python -i spec-v1-swagger.json --package-name ynab
+      - name: Commit 
+        uses: stefanzweifel/git-auto-commit-action@master
+        with:
+          commit_author_email: davidhao3300@yahoo.com
+          commit_author_name: David Hao
+          commit_message: '[Automated Commit] Update OpenAPI spec'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
