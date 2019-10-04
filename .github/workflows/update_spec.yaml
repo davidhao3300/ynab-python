@@ -1,8 +1,7 @@
 name: Update spec JSON
 on:
-  push
-  # schedule:
-  #   - cron: '0 9 * * *' 
+  schedule:
+    - cron: '0 9 * * *' 
 jobs:
   update_spec:
     runs-on: ubuntu-latest
@@ -12,17 +11,16 @@ jobs:
         run: |
           curl https://api.youneedabudget.com/papi/spec-v1-swagger.json > spec-v1-swagger.json
           # Exit early if no changes.
-          # if [ -z $(git status --porcelain) ]; then
-          #   exit 78
-          # fi
+          if [ -z $(git status --porcelain) ]; then
+            exit 78
+          fi
       # Not using setup-java action b/c we really don't care what java version, just that it's new
       # If it ever turns out openapi generator isn't compatible with the newest java, we can
       # switch to using the action.
       - name: Install required packages
         run: |
-          sudo -i
-          apt update
-          apt install -y default-jdk-headless wget
+          sudo apt update
+          sudo apt install -y default-jdk-headless wget
       - name: Install OpenApi generator
         run: |
           version=$(cat .openapi-generator/VERSION)
