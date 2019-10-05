@@ -1,0 +1,27 @@
+name: CI tests
+on:
+  push
+jobs:
+  ci_test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python:
+          # EOL: 01/01/2020
+          - 2.7.x
+          # EOL: 09/13/2020
+          - 3.5.x
+          # EOL: 12/23/2021
+          - 3.6.x
+          # EOL: 06/07/2023
+          - 3.7.x
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - uses: actions/setup-python@v1.0.1
+        with:
+          python-version: ${{ matrix.python }}
+          architecture: 'x64'
+      - run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          nosetests
