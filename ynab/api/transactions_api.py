@@ -105,12 +105,12 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `create_transaction`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in local_var_params or
-                local_var_params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in local_var_params or  # noqa: E501
+                                                        local_var_params['data'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `data` when calling `create_transaction`")  # noqa: E501
 
         collection_formats = {}
@@ -221,12 +221,12 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_transaction_by_id`")  # noqa: E501
         # verify the required parameter 'transaction_id' is set
-        if ('transaction_id' not in local_var_params or
-                local_var_params['transaction_id'] is None):
+        if self.api_client.client_side_validation and ('transaction_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['transaction_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `transaction_id` when calling `get_transaction_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -341,8 +341,8 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_transactions`")  # noqa: E501
 
         collection_formats = {}
@@ -352,11 +352,11 @@ class TransactionsApi(object):
             path_params['budget_id'] = local_var_params['budget_id']  # noqa: E501
 
         query_params = []
-        if 'since_date' in local_var_params:
+        if 'since_date' in local_var_params and local_var_params['since_date'] is not None:  # noqa: E501
             query_params.append(('since_date', local_var_params['since_date']))  # noqa: E501
-        if 'type' in local_var_params:
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
             query_params.append(('type', local_var_params['type']))  # noqa: E501
-        if 'last_knowledge_of_server' in local_var_params:
+        if 'last_knowledge_of_server' in local_var_params and local_var_params['last_knowledge_of_server'] is not None:  # noqa: E501
             query_params.append(('last_knowledge_of_server', local_var_params['last_knowledge_of_server']))  # noqa: E501
 
         header_params = {}
@@ -463,12 +463,12 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_transactions_by_account`")  # noqa: E501
         # verify the required parameter 'account_id' is set
-        if ('account_id' not in local_var_params or
-                local_var_params['account_id'] is None):
+        if self.api_client.client_side_validation and ('account_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['account_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `account_id` when calling `get_transactions_by_account`")  # noqa: E501
 
         collection_formats = {}
@@ -480,11 +480,11 @@ class TransactionsApi(object):
             path_params['account_id'] = local_var_params['account_id']  # noqa: E501
 
         query_params = []
-        if 'since_date' in local_var_params:
+        if 'since_date' in local_var_params and local_var_params['since_date'] is not None:  # noqa: E501
             query_params.append(('since_date', local_var_params['since_date']))  # noqa: E501
-        if 'type' in local_var_params:
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
             query_params.append(('type', local_var_params['type']))  # noqa: E501
-        if 'last_knowledge_of_server' in local_var_params:
+        if 'last_knowledge_of_server' in local_var_params and local_var_params['last_knowledge_of_server'] is not None:  # noqa: E501
             query_params.append(('last_knowledge_of_server', local_var_params['last_knowledge_of_server']))  # noqa: E501
 
         header_params = {}
@@ -591,12 +591,12 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_transactions_by_category`")  # noqa: E501
         # verify the required parameter 'category_id' is set
-        if ('category_id' not in local_var_params or
-                local_var_params['category_id'] is None):
+        if self.api_client.client_side_validation and ('category_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['category_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `category_id` when calling `get_transactions_by_category`")  # noqa: E501
 
         collection_formats = {}
@@ -608,11 +608,11 @@ class TransactionsApi(object):
             path_params['category_id'] = local_var_params['category_id']  # noqa: E501
 
         query_params = []
-        if 'since_date' in local_var_params:
+        if 'since_date' in local_var_params and local_var_params['since_date'] is not None:  # noqa: E501
             query_params.append(('since_date', local_var_params['since_date']))  # noqa: E501
-        if 'type' in local_var_params:
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
             query_params.append(('type', local_var_params['type']))  # noqa: E501
-        if 'last_knowledge_of_server' in local_var_params:
+        if 'last_knowledge_of_server' in local_var_params and local_var_params['last_knowledge_of_server'] is not None:  # noqa: E501
             query_params.append(('last_knowledge_of_server', local_var_params['last_knowledge_of_server']))  # noqa: E501
 
         header_params = {}
@@ -719,12 +719,12 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_transactions_by_payee`")  # noqa: E501
         # verify the required parameter 'payee_id' is set
-        if ('payee_id' not in local_var_params or
-                local_var_params['payee_id'] is None):
+        if self.api_client.client_side_validation and ('payee_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['payee_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `payee_id` when calling `get_transactions_by_payee`")  # noqa: E501
 
         collection_formats = {}
@@ -736,11 +736,11 @@ class TransactionsApi(object):
             path_params['payee_id'] = local_var_params['payee_id']  # noqa: E501
 
         query_params = []
-        if 'since_date' in local_var_params:
+        if 'since_date' in local_var_params and local_var_params['since_date'] is not None:  # noqa: E501
             query_params.append(('since_date', local_var_params['since_date']))  # noqa: E501
-        if 'type' in local_var_params:
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
             query_params.append(('type', local_var_params['type']))  # noqa: E501
-        if 'last_knowledge_of_server' in local_var_params:
+        if 'last_knowledge_of_server' in local_var_params and local_var_params['last_knowledge_of_server'] is not None:  # noqa: E501
             query_params.append(('last_knowledge_of_server', local_var_params['last_knowledge_of_server']))  # noqa: E501
 
         header_params = {}
@@ -843,16 +843,16 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `update_transaction`")  # noqa: E501
         # verify the required parameter 'transaction_id' is set
-        if ('transaction_id' not in local_var_params or
-                local_var_params['transaction_id'] is None):
+        if self.api_client.client_side_validation and ('transaction_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['transaction_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `transaction_id` when calling `update_transaction`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in local_var_params or
-                local_var_params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in local_var_params or  # noqa: E501
+                                                        local_var_params['data'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `data` when calling `update_transaction`")  # noqa: E501
 
         collection_formats = {}
@@ -965,12 +965,12 @@ class TransactionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `update_transactions`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in local_var_params or
-                local_var_params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in local_var_params or  # noqa: E501
+                                                        local_var_params['data'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `data` when calling `update_transactions`")  # noqa: E501
 
         collection_formats = {}

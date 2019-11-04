@@ -105,12 +105,12 @@ class PayeeLocationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_payee_location_by_id`")  # noqa: E501
         # verify the required parameter 'payee_location_id' is set
-        if ('payee_location_id' not in local_var_params or
-                local_var_params['payee_location_id'] is None):
+        if self.api_client.client_side_validation and ('payee_location_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['payee_location_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `payee_location_id` when calling `get_payee_location_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -219,8 +219,8 @@ class PayeeLocationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_payee_locations`")  # noqa: E501
 
         collection_formats = {}
@@ -329,12 +329,12 @@ class PayeeLocationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_payee_locations_by_payee`")  # noqa: E501
         # verify the required parameter 'payee_id' is set
-        if ('payee_id' not in local_var_params or
-                local_var_params['payee_id'] is None):
+        if self.api_client.client_side_validation and ('payee_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['payee_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `payee_id` when calling `get_payee_locations_by_payee`")  # noqa: E501
 
         collection_formats = {}

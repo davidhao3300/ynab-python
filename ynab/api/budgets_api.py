@@ -105,8 +105,8 @@ class BudgetsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_budget_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -116,7 +116,7 @@ class BudgetsApi(object):
             path_params['budget_id'] = local_var_params['budget_id']  # noqa: E501
 
         query_params = []
-        if 'last_knowledge_of_server' in local_var_params:
+        if 'last_knowledge_of_server' in local_var_params and local_var_params['last_knowledge_of_server'] is not None:  # noqa: E501
             query_params.append(('last_knowledge_of_server', local_var_params['last_knowledge_of_server']))  # noqa: E501
 
         header_params = {}
@@ -215,8 +215,8 @@ class BudgetsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_budget_settings_by_id`")  # noqa: E501
 
         collection_formats = {}

@@ -105,12 +105,12 @@ class DeprecatedApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `bulk_create_transactions`")  # noqa: E501
         # verify the required parameter 'transactions' is set
-        if ('transactions' not in local_var_params or
-                local_var_params['transactions'] is None):
+        if self.api_client.client_side_validation and ('transactions' not in local_var_params or  # noqa: E501
+                                                        local_var_params['transactions'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `transactions` when calling `bulk_create_transactions`")  # noqa: E501
 
         collection_formats = {}

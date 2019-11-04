@@ -105,8 +105,8 @@ class CategoriesApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_categories`")  # noqa: E501
 
         collection_formats = {}
@@ -116,7 +116,7 @@ class CategoriesApi(object):
             path_params['budget_id'] = local_var_params['budget_id']  # noqa: E501
 
         query_params = []
-        if 'last_knowledge_of_server' in local_var_params:
+        if 'last_knowledge_of_server' in local_var_params and local_var_params['last_knowledge_of_server'] is not None:  # noqa: E501
             query_params.append(('last_knowledge_of_server', local_var_params['last_knowledge_of_server']))  # noqa: E501
 
         header_params = {}
@@ -217,12 +217,12 @@ class CategoriesApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_category_by_id`")  # noqa: E501
         # verify the required parameter 'category_id' is set
-        if ('category_id' not in local_var_params or
-                local_var_params['category_id'] is None):
+        if self.api_client.client_side_validation and ('category_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['category_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `category_id` when calling `get_category_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -335,16 +335,16 @@ class CategoriesApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `get_month_category_by_id`")  # noqa: E501
         # verify the required parameter 'month' is set
-        if ('month' not in local_var_params or
-                local_var_params['month'] is None):
+        if self.api_client.client_side_validation and ('month' not in local_var_params or  # noqa: E501
+                                                        local_var_params['month'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `month` when calling `get_month_category_by_id`")  # noqa: E501
         # verify the required parameter 'category_id' is set
-        if ('category_id' not in local_var_params or
-                local_var_params['category_id'] is None):
+        if self.api_client.client_side_validation and ('category_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['category_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `category_id` when calling `get_month_category_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -461,20 +461,20 @@ class CategoriesApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in local_var_params or
-                local_var_params['budget_id'] is None):
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `budget_id` when calling `update_month_category`")  # noqa: E501
         # verify the required parameter 'month' is set
-        if ('month' not in local_var_params or
-                local_var_params['month'] is None):
+        if self.api_client.client_side_validation and ('month' not in local_var_params or  # noqa: E501
+                                                        local_var_params['month'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `month` when calling `update_month_category`")  # noqa: E501
         # verify the required parameter 'category_id' is set
-        if ('category_id' not in local_var_params or
-                local_var_params['category_id'] is None):
+        if self.api_client.client_side_validation and ('category_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['category_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `category_id` when calling `update_month_category`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in local_var_params or
-                local_var_params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in local_var_params or  # noqa: E501
+                                                        local_var_params['data'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `data` when calling `update_month_category`")  # noqa: E501
 
         collection_formats = {}
