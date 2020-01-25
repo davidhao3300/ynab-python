@@ -2,3 +2,4 @@ git_push.sh
 .travis.yml
 requirements.txt
 .gitignore
+README.md
