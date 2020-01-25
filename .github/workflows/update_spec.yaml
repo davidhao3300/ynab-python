@@ -23,9 +23,7 @@ jobs:
           curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ~/bin/openapitools/openapi-generator-cli
           chmod u+x ~/bin/openapitools/openapi-generator-cli
           export PATH=$PATH:~/bin/openapitools/
-          # Get previous version from setup.py
-          cat setup.py | grep -oP  'VERSION = "\K(.+)(?=")'
-          openapi-generator-cli generate -g python -i spec-v1-swagger.json --package-name ynab
+          openapi-generator-cli generate -g python -i spec-v1-swagger.json -c openapi.yaml
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v1.5.0
         env:
