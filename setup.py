@@ -29,7 +29,7 @@ setup(
     description="YNAB API Endpoints",
     author="OpenAPI Generator community",
     author_email="team@openapitools.org",
-    url="",
+    url="https://github.com/davidhao3300/ynab-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "YNAB API Endpoints"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
