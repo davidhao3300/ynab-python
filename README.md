@@ -16,7 +16,7 @@ Python 3.5+ (We try to respect the [Python EOL schedule](https://devguide.python
 ### pip install
 
 ```sh
-pip install git+https://github.com/davidhao3300/ynab-python.git
+pip install ynab
 ```
 
 Then import the package:
