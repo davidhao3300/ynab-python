@@ -425,7 +425,7 @@
       "patch": {
         "tags": ["Categories"],
         "summary": "Update a category for a specific month",
-        "description": "Update a category for a specific month",
+        "description": "Update a category for a specific month.  Only 'budgeted' amount can be updated currently.",
         "operationId": "updateMonthCategory",
         "produces": ["application/json"],
         "parameters": [
@@ -454,7 +454,7 @@
           {
             "name": "data",
             "in": "body",
-            "description": "The category to update",
+            "description": "The category to update.  Only 'budgeted' amount can currently be updated and any other fields specified will be ignored.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/SaveMonthCategoryWrapper"

@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 Update a category for a specific month
 
-Update a category for a specific month
+Update a category for a specific month.  Only 'budgeted' amount can be updated currently.
 
 ### Example
 
@@ -247,7 +247,7 @@ with ynab.ApiClient(configuration) as api_client:
     budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 month = '2013-10-20' # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 category_id = 'category_id_example' # str | The id of the category
-data = ynab.SaveMonthCategoryWrapper() # SaveMonthCategoryWrapper | The category to update
+data = ynab.SaveMonthCategoryWrapper() # SaveMonthCategoryWrapper | The category to update.  Only 'budgeted' amount can currently be updated and any other fields specified will be ignored.
 
     try:
         # Update a category for a specific month
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
  **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
  **month** | **date**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) | 
  **category_id** | **str**| The id of the category | 
- **data** | [**SaveMonthCategoryWrapper**](SaveMonthCategoryWrapper.md)| The category to update | 
+ **data** | [**SaveMonthCategoryWrapper**](SaveMonthCategoryWrapper.md)| The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. | 
 
 ### Return type
 
