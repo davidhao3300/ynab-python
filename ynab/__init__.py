@@ -93,6 +93,7 @@ from ynab.models.save_category_response import SaveCategoryResponse
 from ynab.models.save_category_response_data import SaveCategoryResponseData
 from ynab.models.save_month_category import SaveMonthCategory
 from ynab.models.save_month_category_wrapper import SaveMonthCategoryWrapper
+from ynab.models.save_sub_transaction import SaveSubTransaction
 from ynab.models.save_transaction import SaveTransaction
 from ynab.models.save_transaction_wrapper import SaveTransactionWrapper
 from ynab.models.save_transactions_response import SaveTransactionsResponse

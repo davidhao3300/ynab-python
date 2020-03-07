@@ -44,7 +44,8 @@ class UpdateTransaction(object):
         'cleared': 'str',
         'approved': 'bool',
         'flag_color': 'str',
-        'import_id': 'str'
+        'import_id': 'str',
+        'subtransactions': 'list[SaveSubTransaction]'
     }
 
     attribute_map = {
@@ -59,10 +60,11 @@ class UpdateTransaction(object):
         'cleared': 'cleared',
         'approved': 'approved',
         'flag_color': 'flag_color',
-        'import_id': 'import_id'
+        'import_id': 'import_id',
+        'subtransactions': 'subtransactions'
     }
 
-    def __init__(self, id=None, account_id=None, date=None, amount=None, payee_id=None, payee_name=None, category_id=None, memo=None, cleared=None, approved=None, flag_color=None, import_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, account_id=None, date=None, amount=None, payee_id=None, payee_name=None, category_id=None, memo=None, cleared=None, approved=None, flag_color=None, import_id=None, subtransactions=None, local_vars_configuration=None):  # noqa: E501
         """UpdateTransaction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class UpdateTransaction(object):
         self._approved = None
         self._flag_color = None
         self._import_id = None
+        self._subtransactions = None
         self.discriminator = None
 
         self.id = id
@@ -102,6 +105,8 @@ class UpdateTransaction(object):
             self.flag_color = flag_color
         if import_id is not None:
             self.import_id = import_id
+        if subtransactions is not None:
+            self.subtransactions = subtransactions
 
     @property
     def id(self):
@@ -401,6 +406,29 @@ class UpdateTransaction(object):
             raise ValueError("Invalid value for `import_id`, length must be less than or equal to `36`")  # noqa: E501
 
         self._import_id = import_id
+
+    @property
+    def subtransactions(self):
+        """Gets the subtransactions of this UpdateTransaction.  # noqa: E501
+
+        An array of sub-transactions to configure a new transaction as a split.  Updating `subtransactions` on an existing split transaction is not supported.  If `subtransactions` array is specified for an existing transaction, it will be ignored.  # noqa: E501
+
+        :return: The subtransactions of this UpdateTransaction.  # noqa: E501
+        :rtype: list[SaveSubTransaction]
+        """
+        return self._subtransactions
+
+    @subtransactions.setter
+    def subtransactions(self, subtransactions):
+        """Sets the subtransactions of this UpdateTransaction.
+
+        An array of sub-transactions to configure a new transaction as a split.  Updating `subtransactions` on an existing split transaction is not supported.  If `subtransactions` array is specified for an existing transaction, it will be ignored.  # noqa: E501
+
+        :param subtransactions: The subtransactions of this UpdateTransaction.  # noqa: E501
+        :type: list[SaveSubTransaction]
+        """
+
+        self._subtransactions = subtransactions
 
     def to_dict(self):
         """Returns the model properties as a dict"""
