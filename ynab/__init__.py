@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 # import apis into sdk package
 from ynab.api.accounts_api import AccountsApi
