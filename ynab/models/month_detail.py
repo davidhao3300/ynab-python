@@ -133,7 +133,7 @@ class MonthDetail(object):
     def income(self):
         """Gets the income of this MonthDetail.  # noqa: E501
 
-        The total amount in transactions categorized to 'Inflow: To be Budgeted' in the month  # noqa: E501
+        The total amount of transactions categorized to 'Inflow: To be Budgeted' in the month  # noqa: E501
 
         :return: The income of this MonthDetail.  # noqa: E501
         :rtype: int
@@ -144,7 +144,7 @@ class MonthDetail(object):
     def income(self, income):
         """Sets the income of this MonthDetail.
 
-        The total amount in transactions categorized to 'Inflow: To be Budgeted' in the month  # noqa: E501
+        The total amount of transactions categorized to 'Inflow: To be Budgeted' in the month  # noqa: E501
 
         :param income: The income of this MonthDetail.  # noqa: E501
         :type: int
@@ -183,7 +183,7 @@ class MonthDetail(object):
     def activity(self):
         """Gets the activity of this MonthDetail.  # noqa: E501
 
-        The total amount in transactions in the month, excluding those categorized to 'Inflow: To be Budgeted'  # noqa: E501
+        The total amount of transactions in the month, excluding those categorized to 'Inflow: To be Budgeted'  # noqa: E501
 
         :return: The activity of this MonthDetail.  # noqa: E501
         :rtype: int
@@ -194,7 +194,7 @@ class MonthDetail(object):
     def activity(self, activity):
         """Sets the activity of this MonthDetail.
 
-        The total amount in transactions in the month, excluding those categorized to 'Inflow: To be Budgeted'  # noqa: E501
+        The total amount of transactions in the month, excluding those categorized to 'Inflow: To be Budgeted'  # noqa: E501
 
         :param activity: The activity of this MonthDetail.  # noqa: E501
         :type: int

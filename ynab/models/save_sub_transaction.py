@@ -75,7 +75,7 @@ class SaveSubTransaction(object):
     def amount(self):
         """Gets the amount of this SaveSubTransaction.  # noqa: E501
 
-        The sub-transaction amount in milliunits format.  # noqa: E501
+        The subtransaction amount in milliunits format.  # noqa: E501
 
         :return: The amount of this SaveSubTransaction.  # noqa: E501
         :rtype: int
@@ -86,7 +86,7 @@ class SaveSubTransaction(object):
     def amount(self, amount):
         """Sets the amount of this SaveSubTransaction.
 
-        The sub-transaction amount in milliunits format.  # noqa: E501
+        The subtransaction amount in milliunits format.  # noqa: E501
 
         :param amount: The amount of this SaveSubTransaction.  # noqa: E501
         :type: int
@@ -100,7 +100,7 @@ class SaveSubTransaction(object):
     def payee_id(self):
         """Gets the payee_id of this SaveSubTransaction.  # noqa: E501
 
-        The payee for the sub-transaction.  Transfer payees are not allowed.  # noqa: E501
+        The payee for the subtransaction.  Transfer payees are not allowed.  # noqa: E501
 
         :return: The payee_id of this SaveSubTransaction.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class SaveSubTransaction(object):
     def payee_id(self, payee_id):
         """Sets the payee_id of this SaveSubTransaction.
 
-        The payee for the sub-transaction.  Transfer payees are not allowed.  # noqa: E501
+        The payee for the subtransaction.  Transfer payees are not allowed.  # noqa: E501
 
         :param payee_id: The payee_id of this SaveSubTransaction.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class SaveSubTransaction(object):
     def payee_name(self):
         """Gets the payee_name of this SaveSubTransaction.  # noqa: E501
 
-        The payee name.  If a payee_name value is provided and payee_id has a null value, the payee_name value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
+        The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
 
         :return: The payee_name of this SaveSubTransaction.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class SaveSubTransaction(object):
     def payee_name(self, payee_name):
         """Sets the payee_name of this SaveSubTransaction.
 
-        The payee name.  If a payee_name value is provided and payee_id has a null value, the payee_name value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
+        The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
 
         :param payee_name: The payee_name of this SaveSubTransaction.  # noqa: E501
         :type: str
@@ -149,7 +149,7 @@ class SaveSubTransaction(object):
     def category_id(self):
         """Gets the category_id of this SaveSubTransaction.  # noqa: E501
 
-        The category for the sub-transaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.  # noqa: E501
+        The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.  # noqa: E501
 
         :return: The category_id of this SaveSubTransaction.  # noqa: E501
         :rtype: str
@@ -160,7 +160,7 @@ class SaveSubTransaction(object):
     def category_id(self, category_id):
         """Sets the category_id of this SaveSubTransaction.
 
-        The category for the sub-transaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.  # noqa: E501
+        The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.  # noqa: E501
 
         :param category_id: The category_id of this SaveSubTransaction.  # noqa: E501
         :type: str
