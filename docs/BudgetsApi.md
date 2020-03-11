@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_budgets**
-> BudgetSummaryResponse get_budgets()
+> BudgetSummaryResponse get_budgets(include_accounts=include_accounts)
 
 List budgets
 
@@ -171,17 +171,21 @@ configuration.host = "https://api.youneedabudget.com/v1"
 with ynab.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ynab.BudgetsApi(api_client)
-    
+    include_accounts = True # bool | Whether to include the list of budget accounts (optional)
+
     try:
         # List budgets
-        api_response = api_instance.get_budgets()
+        api_response = api_instance.get_budgets(include_accounts=include_accounts)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling BudgetsApi->get_budgets: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **include_accounts** | **bool**| Whether to include the list of budget accounts | [optional] 
 
 ### Return type
 

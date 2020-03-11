@@ -266,6 +266,7 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
+        :param bool include_accounts: Whether to include the list of budget accounts
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -290,6 +291,7 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
+        :param bool include_accounts: Whether to include the list of budget accounts
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -306,7 +308,7 @@ class BudgetsApi(object):
 
         local_var_params = locals()
 
-        all_params = []  # noqa: E501
+        all_params = ['include_accounts']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -326,6 +328,8 @@ class BudgetsApi(object):
         path_params = {}
 
         query_params = []
+        if 'include_accounts' in local_var_params and local_var_params['include_accounts'] is not None:  # noqa: E501
+            query_params.append(('include_accounts', local_var_params['include_accounts']))  # noqa: E501
 
         header_params = {}
 

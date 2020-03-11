@@ -80,7 +80,15 @@
         "description": "Returns budgets list with summary information",
         "operationId": "getBudgets",
         "produces": ["application/json"],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "include_accounts",
+            "in": "query",
+            "description": "Whether to include the list of budget accounts",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "responses": {
           "200": {
             "description": "The list of budgets",
@@ -1526,6 +1534,13 @@
         },
         "currency_format": {
           "$ref": "#/definitions/CurrencyFormat"
+        },
+        "accounts": {
+          "type": "array",
+          "description": "The budget accounts (only included if `include_accounts=true` specified as query parameter)",
+          "items": {
+            "$ref": "#/definitions/Account"
+          }
         }
       }
     },
