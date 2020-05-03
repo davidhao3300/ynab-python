@@ -100,7 +100,7 @@ class SaveSubTransaction(object):
     def payee_id(self):
         """Gets the payee_id of this SaveSubTransaction.  # noqa: E501
 
-        The payee for the subtransaction.  Transfer payees are not allowed.  # noqa: E501
+        The payee for the subtransaction.  # noqa: E501
 
         :return: The payee_id of this SaveSubTransaction.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class SaveSubTransaction(object):
     def payee_id(self, payee_id):
         """Sets the payee_id of this SaveSubTransaction.
 
-        The payee for the subtransaction.  Transfer payees are not allowed.  # noqa: E501
+        The payee for the subtransaction.  # noqa: E501
 
         :param payee_id: The payee_id of this SaveSubTransaction.  # noqa: E501
         :type: str

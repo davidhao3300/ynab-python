@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from ynab.api_client import ApiClient
-from ynab.exceptions import (
+from ynab.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -90,11 +90,18 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'last_knowledge_of_server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'last_knowledge_of_server'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -202,11 +209,18 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'category_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'category_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -320,11 +334,19 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'month', 'category_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'month',
+            'category_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -446,11 +468,20 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'month', 'category_id', 'data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'month',
+            'category_id',
+            'data'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
