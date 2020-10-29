@@ -23,6 +23,7 @@ jobs:
           curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ~/bin/openapitools/openapi-generator-cli
           chmod u+x ~/bin/openapitools/openapi-generator-cli
           export PATH=$PATH:~/bin/openapitools/
+          rm -rf test
           openapi-generator-cli generate -g python -i spec-v1-swagger.json -c openapi.yaml
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v1.5.0

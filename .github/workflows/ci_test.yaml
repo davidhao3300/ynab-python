@@ -7,14 +7,14 @@ jobs:
     strategy:
       matrix:
         python:
-          # EOL: 09/13/2020
-          - 3.5.x
           # EOL: 12/23/2021
           - 3.6.x
           # EOL: 06/07/2023
           - 3.7.x
           # EOL: 10/2024
           - 3.8.x
+          # EOL: TBD
+          - 3.9.x
     steps:
       - uses: actions/checkout@v1.0.0
       - uses: actions/setup-python@v1.0.1
