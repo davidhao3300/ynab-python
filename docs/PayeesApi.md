@@ -32,20 +32,17 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-
-# Enter a context with an instance of the API client
-with ynab.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ynab.PayeesApi(api_client)
-    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+# Create an instance of the API class
+api_instance = ynab.PayeesApi(ynab.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 payee_id = 'payee_id_example' # str | The id of the payee
 
-    try:
-        # Single payee
-        api_response = api_instance.get_payee_by_id(budget_id, payee_id)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling PayeesApi->get_payee_by_id: %s\n" % e)
+try:
+    # Single payee
+    api_response = api_instance.get_payee_by_id(budget_id, payee_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayeesApi->get_payee_by_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -101,20 +98,17 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-
-# Enter a context with an instance of the API client
-with ynab.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ynab.PayeesApi(api_client)
-    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+# Create an instance of the API class
+api_instance = ynab.PayeesApi(ynab.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
-    try:
-        # List payees
-        api_response = api_instance.get_payees(budget_id, last_knowledge_of_server=last_knowledge_of_server)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling PayeesApi->get_payees: %s\n" % e)
+try:
+    # List payees
+    api_response = api_instance.get_payees(budget_id, last_knowledge_of_server=last_knowledge_of_server)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayeesApi->get_payees: %s\n" % e)
 ```
 
 ### Parameters
