@@ -33,6 +33,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
+
 # Enter a context with an instance of the API client
 with ynab.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -101,6 +102,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
+
 # Enter a context with an instance of the API client
 with ynab.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -167,6 +169,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
+
 # Enter a context with an instance of the API client
 with ynab.ApiClient(configuration) as api_client:
     # Create an instance of the API class

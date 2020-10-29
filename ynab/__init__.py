@@ -113,6 +113,8 @@ from ynab.models.transaction_detail_all_of import TransactionDetailAllOf
 from ynab.models.transaction_response import TransactionResponse
 from ynab.models.transaction_response_data import TransactionResponseData
 from ynab.models.transaction_summary import TransactionSummary
+from ynab.models.transactions_import_response import TransactionsImportResponse
+from ynab.models.transactions_import_response_data import TransactionsImportResponseData
 from ynab.models.transactions_response import TransactionsResponse
 from ynab.models.transactions_response_data import TransactionsResponseData
 from ynab.models.update_transaction import UpdateTransaction
