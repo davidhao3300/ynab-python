@@ -10,7 +10,6 @@
 
 from __future__ import absolute_import
 
-import atexit
 import datetime
 from dateutil.parser import parse
 import json
@@ -68,7 +67,7 @@ class ApiClient(object):
     def __init__(self, configuration=None, header_name=None, header_value=None,
                  cookie=None, pool_threads=1):
         if configuration is None:
-            configuration = Configuration.get_default_copy()
+            configuration = Configuration()
         self.configuration = configuration
         self.pool_threads = pool_threads
 
@@ -81,19 +80,11 @@ class ApiClient(object):
         self.user_agent = 'OpenAPI-Generator/0.0.2/python'
         self.client_side_validation = configuration.client_side_validation
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, exc_type, exc_value, traceback):
-        self.close()
-
-    def close(self):
+    def __del__(self):
         if self._pool:
             self._pool.close()
             self._pool.join()
             self._pool = None
-            if hasattr(atexit, 'unregister'):
-                atexit.unregister(self.close)
 
     @property
     def pool(self):
@@ -101,7 +92,6 @@ class ApiClient(object):
          avoids instantiating unused threadpool for blocking clients.
         """
         if self._pool is None:
-            atexit.register(self.close)
             self._pool = ThreadPool(self.pool_threads)
         return self._pool
 
@@ -523,7 +513,9 @@ class ApiClient(object):
         for auth in auth_settings:
             auth_setting = self.configuration.auth_settings().get(auth)
             if auth_setting:
-                if auth_setting['in'] == 'cookie':
+                if not auth_setting['value']:
+                    continue
+                elif auth_setting['in'] == 'cookie':
                     headers['Cookie'] = auth_setting['value']
                 elif auth_setting['in'] == 'header':
                     headers[auth_setting['key']] = auth_setting['value']

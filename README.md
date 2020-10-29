@@ -10,7 +10,7 @@ Status: Github Actions takes care of opening PRs for new OpenAPI versions/YNAB A
 
 ## Requirements
 
-Python 3.5+ (We try to respect the [Python EOL schedule](https://devguide.python.org/#status-of-python-branches))
+Python 3.6+ (We try to respect the [Python EOL schedule](https://devguide.python.org/#status-of-python-branches))
 
 ## Installation & Usage
 ### pip install

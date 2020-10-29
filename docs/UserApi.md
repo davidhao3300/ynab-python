@@ -31,18 +31,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
+# Create an instance of the API class
+api_instance = ynab.UserApi(ynab.ApiClient(configuration))
 
-# Enter a context with an instance of the API client
-with ynab.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ynab.UserApi(api_client)
-    
-    try:
-        # User info
-        api_response = api_instance.get_user()
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UserApi->get_user: %s\n" % e)
+try:
+    # User info
+    api_response = api_instance.get_user()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserApi->get_user: %s\n" % e)
 ```
 
 ### Parameters
