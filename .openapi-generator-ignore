@@ -3,3 +3,4 @@ git_push.sh
 .travis.yml
 .gitignore
 README.md
+test-requirements.txt
